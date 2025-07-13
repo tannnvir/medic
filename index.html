@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Record Verifier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Blockchain Medical Record Verifier</h1>
+
+    <div class="card">
+      <h2>Upload Patient Record</h2>
+      <input type="file" id="pdfInput" accept=".pdf" />
+      <input type="text" id="patientAddress" placeholder="Patient Wallet Address" />
+      <button onclick="uploadToIPFS()">Upload & Add Record</button>
+    </div>
+
+    <div class="card">
+      <h2>Verify Record</h2>
+      <input type="text" id="verifyAddress" placeholder="Patient Wallet Address" />
+      <input type="text" id="cidInput" placeholder="CID to verify" />
+      <button onclick="verifyRecord()">Verify</button>
+      <div id="verifyResult"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
