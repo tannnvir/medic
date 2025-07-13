@@ -1,0 +1,31 @@
+{
+  "name": "medical-records-dapp",
+  "version": "1.0.0",
+  "description": "Decentralized Medical Records Management System",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "node": "npx hardhat node",
+    "deploy": "npx hardhat run scripts/deploy.js --network localhost"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "hardhat",
+    "medical"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^3.4.4",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.16.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
