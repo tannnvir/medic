@@ -8,26 +8,44 @@
 </head>
 <body>
   <div class="container">
-    <h1>Blockchain Medical Record Verifier</h1>
+    <header>
+      <h1>Blockchain Medical Record Verifier</h1>
+      <div id="walletStatus">
+        <span id="account">Not connected</span>
+        <button id="connectWallet" onclick="connectWallet()" style="display: none;">Connect Wallet</button>
+      </div>
+    </header>
 
     <div class="card">
-      <h2>Upload Patient Record</h2>
-      <input type="file" id="pdfInput" accept=".pdf" />
-      <input type="text" id="patientAddress" placeholder="Patient Wallet Address" />
-      <button onclick="uploadToIPFS()">Upload & Add Record</button>
+      <h2>📤 Upload Patient Record</h2>
+      <div class="form-group">
+        <label for="pdfInput">Select PDF File:</label>
+        <input type="file" id="pdfInput" accept=".pdf" class="file-input" />
+      </div>
+      <div class="form-group">
+        <label for="patientAddress">Patient's Ethereum Address:</label>
+        <input type="text" id="patientAddress" placeholder="0x..." class="text-input" />
+      </div>
+      <button onclick="uploadToIPFS()" class="primary-btn">Upload & Add Record</button>
+      <div id="uploadStatus" class="status-message"></div>
     </div>
 
     <div class="card">
-      <h2>Verify Record</h2>
-      <input type="text" id="verifyAddress" placeholder="Patient Wallet Address" />
-      <input type="text" id="cidInput" placeholder="CID to verify" />
-      <button onclick="verifyRecord()">Verify</button>
-      <div id="verifyResult"></div>
+      <h2>🔍 Verify Record</h2>
+      <div class="form-group">
+        <label for="verifyAddress">Patient's Ethereum Address:</label>
+        <input type="text" id="verifyAddress" placeholder="0x..." class="text-input" />
+      </div>
+      <div class="form-group">
+        <label for="cidInput">IPFS CID to Verify:</label>
+        <input type="text" id="cidInput" placeholder="QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" class="text-input" />
+      </div>
+      <button onclick="verifyRecord()" class="secondary-btn">Verify Record</button>
+      <div id="verifyResult" class="status-message"></div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
